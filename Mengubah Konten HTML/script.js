@@ -8,5 +8,11 @@ playBtnElement.setAttribute('disabled', 'true');
 
 const dicodingLink = document.querySelector("#links ul li:nth-child(1) a");
 // console.log(dicodingLink);
-dicodingLink.innerText = 'Belajar Programming di Dicoding';
+dicodingLink.innerHTML = '<i>Belajar Programming di Dicoding<i>';
 dicodingLink.setAttribute('target', '_blank');
+
+const BtnAll = document.querySelectorAll('.button');
+
+BtnAll.forEach(btn => {
+  btn.childNodes[1].style.borderRadius = '10px';
+})

@@ -40,6 +40,25 @@ function renderUserList() {
   })
 }
 
+submitAction.addEventListener('submit', function (event) {
+
+  const nama = document.getElementById('nama').value;
+  const umur = document.getElementById('umur').value;
+  const domisili = document.getElementById('domisili').value;
+  const newUserData = {
+    nama,
+    umur,
+    domisili,
+  };
+
+  putUserList(newUserData);
+  renderUserList();
+  event.preventDefault();
+  document.getElementById('nama').value = '';
+  document.getElementById('umur').value = '';
+  document.getElementById('domisili').value = '';
+});
+
 window.addEventListener('load', function () {
   if (checkForStorage) {
     if (localStorage.getItem(storageKey) !== null) {
